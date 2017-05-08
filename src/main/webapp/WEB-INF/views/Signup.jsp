@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<script type="resources/js/Signup.js"></script>
+<!-- <script src="resources/js/Signup.js"></script> -->
 
 <title>Insert title here</title>
 <style>
@@ -36,63 +36,60 @@ a{color:inherit;text-decoration:none}
 #success_message{ display: none;}
 
 </style>
+
 <script type="text/javascript">
-function myFunction() {
-    var user_password = document.getElementById("pswd").value;
-    var confirm_password = document.getElementById("con_pswd").value;
-    if (user_password != confirm_password) {
-       ;
-        document.getElementById("pswd");
-        document.getElementById("con_pswd");
-    }
-    else {
-        alert("Passwords Match!!!");
-        document.getElementById("SignupForm").submit();
-    }
-}</script>
+
+</script>
 </head>
-<body>
-<div class="login-wrap">
+<body onload="document.signup.username.focus();">
+<div class="login-wrap"><br><br><br>
   <div class="form-group">
     <div class="container">
 
-    <form class="form-horizontal" action="newUser" method="post"  id="contact_form" onsubmit ="validateForm()">
+    <form class="form-horizontal" action="newUser" method="post"  id="contact_form"  name='signup' onSubmit="return formValidation();">
 <fieldset>
 
-<!-- Form Name -->
-<legend><center><h2><b></b></h2></center></legend><br>
 
-<!-- Text input-->
-
+ 
+ <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label"><span class="req">*</span></label>  
+  <label class="col-md-4 control-label"></label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="first_name" placeholder="First Name" class="form-control"  type="text" id = "fname" onkeyup = "Validate(this)" required/ >
-  
+  <label for="user_name"></label>
+  <input  name="user_name" placeholder="Username" class="form-control"  type="text" id = "uname">
     </div>
   </div>
 </div>
-
-<!-- Text input-->
 
 <div class="form-group">
   <label class="col-md-4 control-label" ></label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input name="last_name" placeholder="Last Name" class="form-control"  type="text" id = "lname">
+  <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+  <label for="user_password"></label>
+  <input name="user_password" placeholder="Password" class="form-control"  type="password" id = "pswd">
     </div>
   </div>
 </div>
 
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <label for="Address"></label>
+  <input  name="Address" placeholder="Address" class="form-control"  type="text" >
+    </div>
+  </div>
+</div>
   <div class="form-group">
-
-<label class="col-md-4 control-label"></label>
+  <label class="col-md-4 control-label"></label>
 <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+        <label for="Location"></label>
     <select name="Location" class="form-control selectpicker" id = "Location">
       <option value="">Select your City</option>
       <option>Coimbatore</option>
@@ -105,38 +102,14 @@ function myFunction() {
 </div>
 </div>
   
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label"></label>  
-  <div class="col-md-4 inputGroupContainer">
-  <div class="input-group">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-  <input  name="user_name" placeholder="Username" class="form-control"  type="text" id = "uname">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
 
 <div class="form-group">
   <label class="col-md-4 control-label" ></label> 
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
   <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
-  <input name="user_password" placeholder="Password" class="form-control"  type="password" id = "pswd">
-    </div>
-  </div>
-</div>
-
-<!-- Text input-->
-
-<div class="form-group">
-  <label class="col-md-4 control-label" ></label> 
-    <div class="col-md-4 inputGroupContainer">
-    <div class="input-group">
-  <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
-  <input name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password" id = "con_pswd">
+  <label for="Zip_code"></label>
+  <input name="Zip_code" placeholder="Zipcode" class="form-control"  type="password" id = "con_pswd">
     </div>
   </div>
 </div>
@@ -147,6 +120,7 @@ function myFunction() {
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        <label for="email"></label>
   <input name="email" placeholder="E-Mail Address" class="form-control"  type="text" id = "email">
     </div>
   </div>
@@ -160,7 +134,8 @@ function myFunction() {
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="contact_no" placeholder="(639)" class="form-control" type="text" id = "contact_no">
+        <label for="contact_no"></label>
+  <input name="contact_no" placeholder="(+91)" class="form-control" type="text" id = "contact_no">
     </div>
   </div>
 </div>
@@ -176,6 +151,9 @@ function myFunction() {
   <div class="col-md-4"><br>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
   <div class="form-group text-center"><br>
+    <!-- <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-refresh"></span> Refresh
+        </button> -->
           <input type="button" value="Go Back !" onclick="history.back(-1)"> 
           
   </div>
@@ -185,7 +163,7 @@ function myFunction() {
 </div>
     </div>
  </div>
- <script src="resources/js/Signup.js"></script>
+ <script type="text/javascript" src="resources/js/Signup.js"></script>
  
  </body>
  </html>

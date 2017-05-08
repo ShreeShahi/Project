@@ -6,23 +6,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.niit.Shoppingcartbackend.dao.CategoryDAO;
-import com.niit.Shoppingcartbackend.domain.Category;
+import com.niit.ShoppingCartBackend.dao.CategoryDAO;
+import com.niit.ShoppingCartBackend.domain.Category;
 
 @Controller
 public class CategoryController {
-	
 	@Autowired CategoryDAO categoryDAO;
 	@Autowired Category category;
 	
-
 	@RequestMapping("/newCategory")
-public String newCategory(@ModelAttribute Category category,Model model)
-{
-categoryDAO.save(category);
-model.addAttribute("isUserClickedNew Category","true");
-return "Home";
+	public String newCategory(@ModelAttribute Category category,Model model)
+	{
+	categoryDAO.save(category);
+	model.addAttribute("isUserClickedNew Category","true");
+	return "Home";
 
-}
+	}
 
 }

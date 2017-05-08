@@ -186,19 +186,19 @@ a{color:inherit;text-decoration:none}
             <div class="Absolute-Center is-Responsive">
       <div id="logo-container"></div>
       <div class="col-sm-12 col-md-10 col-md-offset-1">
-        <form action="newSupplier" method="post">
+        <form action="newProducts" method="post">
           <div class="form-group input-group">
             <span class="input-group-addon"></span>
-             <input class="form-control" type="text" name='Supplier_Id' placeholder="SupplierId"/> 
+             <input class="form-control" type="text" name='Product_Id' placeholder="ProductId"/> 
                   
           </div>
            <div class="form-group input-group">
             <span class="input-group-addon"></span>
-            <input class="form-control" type="text" name='Supplier_Name' placeholder="Suppliername"/>     
+            <input class="form-control" type="text" name='Product_Name' placeholder="Productname"/>     
           </div>
           <div class="form-group input-group">
             <span class="input-group-addon"></span>
-            <input class="form-control" type="text" name='Supplier_Description' placeholder="Description"/>     
+            <input class="form-control" type="text" name='Product_Description' placeholder="Description"/>     
           </div>
          
           <div class="form-group">

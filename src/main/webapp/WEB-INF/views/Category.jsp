@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <title>Insert title here</title>
 <style>
-
  body{
     margin:0;
     color:#6a6f8c;
@@ -20,7 +19,6 @@
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}
 a{color:inherit;text-decoration:none}
-
 .login-wrap{
     width:100%;
     margin:auto;
@@ -151,7 +149,6 @@ a{color:inherit;text-decoration:none}
 .login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
     transform:rotate(0);
 }
-
 .hr{
     height:2px;
     margin:60px 0 50px 0;
@@ -165,7 +162,6 @@ a{color:inherit;text-decoration:none}
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
 }
-
 .Absolute-Center.is-Responsive {
   width: 50%; 
   height: 50%;
@@ -173,7 +169,6 @@ a{color:inherit;text-decoration:none}
   max-width: 400px;
   padding: 20px;
 }
-
 </style>
 
 </head>
@@ -189,7 +184,11 @@ a{color:inherit;text-decoration:none}
         <form action="newCategory" method="post">
           <div class="form-group input-group">
             <span class="input-group-addon"></span>
-            <input class="form-control" type="text" name='category_name' placeholder="Categoryname"/>          
+            <input class="form-control" type="text" name='category_id' placeholder="Categoryid"/>          
+          </div>
+           <div class="form-group input-group">
+            <span class="input-group-addon"></span>
+            <input class="form-control" type="text" name='category_name' placeholder="Categoryname"/>     
           </div>
           <div class="form-group input-group">
             <span class="input-group-addon"></span>

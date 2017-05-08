@@ -9,8 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.niit.Shoppingcartbackend.dao.CategoryDAO;
-import com.niit.Shoppingcartbackend.domain.Category;
+/*import com.niit.Shoppingcart.dao.CategoryDAO;
+import com.niit.Shoppingcart.domain.Category;*/
 
 @Controller
 public class HomeController {
@@ -18,16 +18,16 @@ public class HomeController {
 	//http://localhost:8080/ShoppingCart/
 	
 	@Autowired HttpSession session;
-	@Autowired Category category;
-	@Autowired CategoryDAO categoryDAO;
+	/*@Autowired Category category;
+	@Autowired CategoryDAO categoryDAO;*/
 	@RequestMapping("/")
 	public  String    goToHome(Model model)
 	
 	{
 		model.addAttribute("message", "");
-		List<Category> categoryList =categoryDAO.list();
+		/*List<Category> categoryList =categoryDAO.list();
 		
-		session.setAttribute("categoryList",categoryList );
+		session.setAttribute("categoryList",categoryList );*/
 		return "Home";
 		
 	}
@@ -106,5 +106,3 @@ public class HomeController {
 		return "Category";
 		}
 	}
-	
-

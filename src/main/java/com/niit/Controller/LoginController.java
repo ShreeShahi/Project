@@ -3,19 +3,18 @@ package com.niit.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.niit.Shoppingcartbackend.dao.UserDAO;
-//import com.niit.Shoppingcartbackend.domain.User;
+import com.niit.ShoppingCartBackend.dao.UserDAO;
 
 @Controller
+
+
 public class LoginController {
-	
 	@Autowired UserDAO userDAO;
 	
 	
-	@RequestMapping("registeredUser")	
+	@RequestMapping("registeredUser") 
 	public ModelAndView showMessage(String username,String password)
 	{
 		System.out.println("in Controller");
@@ -36,10 +35,4 @@ public class LoginController {
 			return mv ;
 	
 }
-
-//	public String registeredUser()
-//	{
-//		return "Home";
-//		
-//	}
 }
